@@ -1,1 +1,3 @@
-Sistema de Tarefas
+<?php
+
+header('Location: public/pages/home.php');
