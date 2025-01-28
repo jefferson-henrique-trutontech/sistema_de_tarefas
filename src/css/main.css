@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    min-width: 100%;
+    min-height: 100%;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(5, 5, 40);
+    padding: 10pt;
+}
+nav ul li{
+    list-style-type: none;
+    float: left;
+    font-size: 12pt;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 5pt;
+    border-radius: 4pt;
+}
+nav ul li a:hover{
+    background-color: white;
+    color: black;
+}
+
+#brand{
+    display: flex;
+    font-size: 15pt;
+    justify-content: center;
+    align-items: center;
+}
+#brand img{
+    border-radius: 50%;
+    border: 2px solid white;
+}
+#brand span{
+    margin-left: 5pt;
+    color: white;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    padding: 15pt 0 15pt 0;
+    background-color: rgb(18, 18, 52);
+    color: white;
+    text-align: center;
+    width: 100%;
+}

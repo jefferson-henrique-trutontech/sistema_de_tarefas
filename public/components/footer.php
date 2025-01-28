@@ -1,6 +1,6 @@
 </main>
 <footer>
-    Made By: @jeff_hrk
+    Made By: <strong>@jeff_hrk</strong>
 </footer>
 </body>
 </html>
