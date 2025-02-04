@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../src/css/main.css">
+    <?= isset($css) ? "<link rel='stylesheet' href='../../src/css/$css'>" : '' ?>
     <title>Organizador de Tarefas - <?=$title?></title>
 </head>
 <body>

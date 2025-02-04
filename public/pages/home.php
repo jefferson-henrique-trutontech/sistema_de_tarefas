@@ -1,11 +1,18 @@
 <?php
 $title = 'Início';
+$css = 'inicio.css';
 include "../components/head.php";
 ?>
 
 <form action="" method="post">
     <fieldset>
         <legend>Nova tarefa</legend>
+
+        <datalist id='categorias'>
+            <option value="Teste">Teste</option>
+        </datalist>
+        <label for="categoria">Categoria</label>
+        <input type="text" id="categoria" autocomplete="on" list="categorias"><br>
 
         <label for="nova_tarefa">Título: </label>
         <input type="text" id="nova_tarefa"><br>
@@ -19,6 +26,10 @@ include "../components/head.php";
         <input type="submit">
     </fieldset>
 </form>
+
+<ul id="tarefas">
+
+</ul>
 
 <?php
 include "../components/footer.php"

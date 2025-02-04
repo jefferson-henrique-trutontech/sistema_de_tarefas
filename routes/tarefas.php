@@ -6,7 +6,7 @@ switch($_SERVER['REQUEST_METHOD']){
     break;
     
     case "POST":
-        echo json_encode($_POST);
+        
     break;
 
     default:
