@@ -37,29 +37,24 @@ $tarefas = new Tarefas((new Database)->getConnection());
 <?php foreach ($tarefas->get_categorias() as $categoria): ?>
     <h3><?= $categoria['nome'] ?></h3>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Data</th>
-                <th>Data de conclusão</th>
-            </tr>
-        </thead>
+    <ul>
+        <li class="header">
+            <span>Título</span>
+            <span>Data</span>
+            <span>Data de conclusão</span>
+        </li>
         <?php foreach ($tarefas->get_tarefas() as $tarefa): ?>
-            <tbody>
 
-                <?php if ($tarefa['categoria'] === $categoria['id_categoria']): ?>
-                    <tr>
-                        <td><?= $tarefa['titulo'] ?></td>
-                        <td><?= $tarefa['data'] ?></td>
-                        <td><?= $tarefa['data_conclusao'] ?></td>
-                    </tr>
-                <?php endif ?>
+            <?php if ($tarefa['categoria'] === $categoria['id_categoria']): ?>
+                <li>
+                    <span><?= $tarefa['titulo'] ?></span>
+                    <span><?= $tarefa['data'] ?></span>
+                    <span><?= $tarefa['data_conclusao'] ?></span>
+                </li>
+            <?php endif ?>
 
-            </tbody>
         <?php endforeach ?>
-    </table>
-    
+    </ul>
 <?php endforeach ?>
 
 <?php

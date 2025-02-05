@@ -1,8 +1,34 @@
-table{
-    border-collapse: collapse;
+:root{
+    --col-width: 99pt;
+    --primary: rgb(18, 18, 52);
 }
 
-table th, table td{
-    border: 1px solid black;
-    padding: 3pt;
+main ul {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4pt;
+    border: 2px solid var(--primary);
+    width: calc(var(--col-width) * 3);
+}
+
+main ul li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-grow: 1;
+}
+main ul li span {
+    padding: 6pt;
+    width: var(--col-width);
+}
+
+main .header{
+    background-color: var(--primary);
+    color: white;
+    font-weight: 800;
+}
+
+fieldset{
+    padding: 5pt;
+    border-radius: 4pt;
 }
