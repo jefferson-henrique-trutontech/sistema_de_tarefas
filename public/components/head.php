@@ -1,3 +1,8 @@
+<?php
+include "../../classes/system.php";
+$sistema = new System();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -34,28 +34,26 @@ $tarefas = new Tarefas((new Database)->getConnection());
 </form>
 
 <h2>Tarefas</h2>
-<?php foreach ($tarefas->get_categorias() as $categoria): ?>
-    <h3><?= $categoria['nome'] ?></h3>
-
-    <ul>
-        <li class="header">
-            <span>Título</span>
-            <span>Data</span>
-            <span>Data de conclusão</span>
-        </li>
+<ul>
+    <?php foreach ($tarefas->get_categorias() as $categoria): ?>
         <?php foreach ($tarefas->get_tarefas() as $tarefa): ?>
 
             <?php if ($tarefa['categoria'] === $categoria['id_categoria']): ?>
                 <li>
-                    <span><?= $tarefa['titulo'] ?></span>
-                    <span><?= $tarefa['data'] ?></span>
-                    <span><?= $tarefa['data_conclusao'] ?></span>
+                    <span class="tarefa_titulo">
+                        <?= $tarefa['titulo'] ?>
+                        <span><?= $categoria['nome'] ?></span>
+                    </span>
+                    <span>
+                        <?= $sistema->converter_data($tarefa['data']) ?>
+                        <?= $sistema->converter_data($tarefa['data_conclusao']) ?>
+                    </span>
                 </li>
             <?php endif ?>
 
         <?php endforeach ?>
-    </ul>
-<?php endforeach ?>
+    <?php endforeach ?>
+</ul>
 
 <?php
 include "../components/footer.php"
