@@ -4,7 +4,7 @@
         if(!$texto){
             file_put_contents('data/tarefas.json', '[]');
         }
-        return json_decode()
+        return json_decode($texto);
     }
 
     switch($_SERVER['REQUEST_METHOD']){
