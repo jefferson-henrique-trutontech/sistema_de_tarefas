@@ -1,15 +1,21 @@
 <?php
     function get_arquivo(){
-        $texto = file_get_contents('data/tarefas.json');
-        if(!$texto){
-            file_put_contents('data/tarefas.json', '[]');
+        $arquivo = 'data/tarefas.json';
+        $pasta = dirname($arquivo);
+        if(!file_exists($pasta)){
+            mkdir($pasta, 077, true);
         }
-        return json_decode($texto);
+        
+        if(!file_exists($arquivo)){
+            file_put_contents($arquivo, '[]');
+        }
+
+        return json_decode(file_get_contents($arquivo));
     }
 
     switch($_SERVER['REQUEST_METHOD']){
         case 'POST':
-            echo get_arquivo();
+            print_r(get_arquivo());
         default:
             break;
     }
